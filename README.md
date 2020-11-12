@@ -4,7 +4,8 @@ Numetrics is a small package that has some functions regarding checking the perf
 
 ## Version
 
-Relase `v0.0.1`
+Release `v0.0.1`
+PyPi Verson `v0.0.1`
 
 ### Why did I create Numetrics?
 1. The first reason is: I want to contribute to the Numerai community. I have learned a lot from Arbitrage, JRB, Wigglemuse, Michael Oliver, the team, and everybody in the community. 
