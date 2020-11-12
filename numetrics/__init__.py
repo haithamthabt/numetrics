@@ -51,10 +51,6 @@ def diagnose(preds_df, TARGET_NAME='target',PREDICTION_NAME='prediction'):
   num_less_001 = 0
   num_val1_less_001 = 0
   num_val2_less_001 = 0
-
-
-  # calculate spearman's correlation
-  coef, p = spearmanr(preds_df[TARGET_NAME], preds_df[PREDICTION_NAME])
   
   #-------------------------------------------------
   for era in eras:
