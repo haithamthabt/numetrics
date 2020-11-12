@@ -2,6 +2,10 @@
 
 Numetrics is a small package that has some functions regarding checking the performance of a model's predictions.
 
+## Version
+
+Relase `v0.0.1`
+
 ### Why did I create Numetrics?
 1. The first reason is: I want to contribute to the Numerai community. I have learned a lot from Arbitrage, JRB, Wigglemuse, Michael Oliver, the team, and everybody in the community. 
 2. The second reason is: I was tired of copying and pasting my code throughout my notebooks, so I decided to create a package to make it easier for me to just install it through pip
