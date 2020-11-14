@@ -1,9 +1,13 @@
 import pandas as pd
 import numpy as np
+import pkg_resources
+
 from scipy.stats import spearmanr
 import statistics
 
-VAL_DATA = pd.read_parquet('\data\val_target_preds.parquet', engine='pyarrow').set_index("id")
+data_file = pkg_resources.resource_stream(__name__, 'data/val_target_preds.parquet')
+
+VAL_DATA = pd.read_parquet(data_file, engine='pyarrow')
 
 
 def diagnose(preds_df, TARGET_NAME='target',PREDICTION_NAME='prediction'):

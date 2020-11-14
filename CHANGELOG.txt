@@ -18,8 +18,13 @@ Change Log
 -------------------
 - Edited Readme
 
-0.0.5 (Nov/11/2020)
+0.0.5 (Nov/13/2020)
 -------------------
 - Added val data file
+- Added beta_dignose function
+
+0.1.0 (Nov/14/2020)
+-------------------
+- Added data file and fixed the file path error
 - Added beta_dignose function
 
