@@ -18,3 +18,8 @@ Change Log
 -------------------
 - Edited Readme
 
+0.0.5 (Nov/11/2020)
+-------------------
+- Added val data file
+- Added beta_dignose function
+
