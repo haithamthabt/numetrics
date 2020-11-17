@@ -216,15 +216,13 @@ def diagnose(preds_df, TARGET_NAME='target',PREDICTION_NAME='prediction'):
 
 
 
+
 def beta_diagnose(preds_df, val_df = VAL_DATA, TARGET_NAME='target',PREDICTION_NAME='prediction'):
 
-  eras = VAL_DATA.era.unique()
+  EXAMPLE_PREDICTION_NAME = 'example_prediction'
 
-  preds_df['era'] = VAL_DATA['era']
-  preds_df['target'] = VAL_DATA['target']
-  preds_df['example_preditcion'] = VAL_DATA['prediction']
-
-  
+  preds_df = VAL_DATA.join(preds_df.rename(columns={PREDICTION_NAME: EXAMPLE_PREDICTION_NAME}))
+  eras = preds_df.era.unique()
 
   val1_eras = ['era121','era122','era123','era124','era125','era126','era127','era128','era129','era130','era131','era132']
   val2_eras = ['era197','era198','era199','era200','era201','era202','era203','era204','era205','era206']
@@ -310,7 +308,7 @@ def beta_diagnose(preds_df, val_df = VAL_DATA, TARGET_NAME='target',PREDICTION_N
 
 
 
-  corr_with_example, p = spearmanr(preds_df['prediction'],preds_df['example_preditcion'])
+  corr_with_example, p = spearmanr(preds_df[PREDICTION_NAME],preds_df[EXAMPLE_PREDICTION_NAME])
 
   print()
   print('=========================== DIAGNOSTICS ===========================')
@@ -492,6 +490,4 @@ def beta_diagnose(preds_df, val_df = VAL_DATA, TARGET_NAME='target',PREDICTION_N
   plot.set_title('Validation')
 
   print(eras_data_df)
-
-
 
