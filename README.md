@@ -25,20 +25,18 @@ import numetrics
 
 ### How to use Numetrics?
 You have one function called ` diagnose ` this is the main function that does all the magic.
-It takes a dataframe of your prediction. Prediction dataframe must have the following
+It takes a dataframe of your prediction. Dataframe format should be same as the one you submit to Numerai. Prediction dataframe must have the following
 - The id
-- target column
-- era
 - predicton column
 
 you can just pass only the predicton dataframe 
 ```python
- numetrics.diagnose(preds_df)
+ numetrics.diagnose(example_prediction)
  ```
 
 or you can spicify the target name and the predicton name 
 ```python
- numetrics.diagnose(preds_df,TARGET_NAME='target',PREDICTION_NAME='prediction_kazutsugi')
+ numetrics.diagnose(preds_df,PREDICTION_NAME='prediction')
  ```
 
 
