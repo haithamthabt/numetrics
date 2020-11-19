@@ -215,18 +215,21 @@ def diagnose(preds_df, TARGET_NAME='target',PREDICTION_NAME='prediction'):
   print(eras_data_df)
 
 
+def beta_diagnose(preds_df, val_df = VAL_DATA, TARGET_NAME='target',PREDICTION_NAME='prediction', EXAMPLE_PREDICTION_NAME='example_prediction'):
 
+  print(VAL_DATA)
 
-def beta_diagnose(preds_df, val_df = VAL_DATA, TARGET_NAME='target',PREDICTION_NAME='prediction'):
-
-  EXAMPLE_PREDICTION_NAME = 'example_prediction'
-
-  preds_df = VAL_DATA.join(preds_df.rename(columns={PREDICTION_NAME: EXAMPLE_PREDICTION_NAME}))
+  preds_df = pd.merge(val_df, preds_df, on='id')
+  
   eras = preds_df.era.unique()
+  val1_eras = preds_df.loc[preds_df['val']=='val_1'].era.unique()
+  val2_eras = preds_df.loc[preds_df['val']=='val_2'].era.unique()
+  val3_eras = preds_df.loc[preds_df['val']=='val_3'].era.unique()
 
-  val1_eras = ['era121','era122','era123','era124','era125','era126','era127','era128','era129','era130','era131','era132']
-  val2_eras = ['era197','era198','era199','era200','era201','era202','era203','era204','era205','era206']
-  val3_eras = ['era207','era208','era209','era210','era211','era212']
+
+  print(val1_eras)
+  print(val2_eras)
+  print(val3_eras)
 
   
 
@@ -346,12 +349,14 @@ def beta_diagnose(preds_df, val_df = VAL_DATA, TARGET_NAME='target',PREDICTION_N
 
 
 
+
   #-------------------------------------------------
   for era in val1_eras:
     
     era_data = eras_data_df.loc[eras_data_df['Era'] == era]
     era_corr_score = era_data.iloc[0]['Score']
     val1_eras_corr.append(era_corr_score)
+    
 
     if (era_corr_score > 0):
       num_val1_wins = num_val1_wins + 1
@@ -491,3 +496,5 @@ def beta_diagnose(preds_df, val_df = VAL_DATA, TARGET_NAME='target',PREDICTION_N
 
   print(eras_data_df)
 
+
+  
