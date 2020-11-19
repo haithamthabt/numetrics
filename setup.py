@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
  
 setup(
   name='numetrics',
-  version='0.0.8',
+  version='0.2.0',
   description='Package For Numerai users to check their models performance',
   long_description=long_description + '\n\n' + open('CHANGELOG.txt').read(),
   long_description_content_type="text/markdown",

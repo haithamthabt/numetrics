@@ -28,3 +28,9 @@ Change Log
 - Added data file and fixed the file path error
 - Added beta_dignose function
 
+0.2.0 (Nov/18/2020)
+-------------------
+- Upgraded beta_dignose to diagnose and then deleted the old diagnose
+- Changed data file
+- Changed example prediction
+
