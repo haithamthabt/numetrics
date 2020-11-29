@@ -34,3 +34,7 @@ Change Log
 - Changed data file
 - Changed example prediction
 
+0.2.1 (Nov/28/2020)
+-------------------
+- Added the feature of calcualting diffrences between Vals
+

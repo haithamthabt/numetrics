@@ -273,6 +273,19 @@ def diagnose(preds_df, val_df = VAL_DATA, TARGET_NAME='target',PREDICTION_NAME='
   print()
 
 
+  print()
+  print()
+  print()
+  print('============================= Vals Diffrences =============================')
+  print('Val1_Val2_Diff:                  ', round((statistics.mean(val1_eras_corr) - statistics.mean(val2_eras_corr)), 4))
+  print('Val1_Val3_Diff:                  ', round((statistics.mean(val1_eras_corr) - statistics.mean(val3_eras_corr)), 4))
+  print('Val2_Val3_Diff:                  ', round((statistics.mean(val2_eras_corr) - statistics.mean(val3_eras_corr)), 4))
+  print('===========================================================================')
+  print()
+  print()
+  print()
+
+
   
   plot = eras_data_df.plot.bar(x='Era')
   plot.set_xlabel('Era')
@@ -280,6 +293,8 @@ def diagnose(preds_df, val_df = VAL_DATA, TARGET_NAME='target',PREDICTION_NAME='
   plot.set_title('Validation')
 
   print(eras_data_df)
+
+
 
 
 #TODO
